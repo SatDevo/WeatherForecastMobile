@@ -4,7 +4,7 @@
 
 # Xcode
 #
-build/
+ios/build
 *.pbxuser
 !default.pbxuser
 *.mode1v3
@@ -20,7 +20,15 @@ DerivedData
 *.hmap
 *.ipa
 *.xcuserstate
-**/.xcode.env.local
+project.xcworkspace
+ios/Index/*
+ios/.xcode.env.local
+
+# DLP defined / Ruby / CocoaPods
+ios/Pods/*
+# * Needed for making bundler to scope install gems
+/vendor/bundle/
+!ios/Pods/Manifest.lock
 
 # Android/IntelliJ
 #
@@ -30,15 +38,25 @@ build/
 local.properties
 *.iml
 *.hprof
-.cxx/
-*.keystore
-!debug.keystore
 
 # node.js
 #
 node_modules/
 npm-debug.log
 yarn-error.log
+yarn.lock-e
+# package-lock.json
+# yarn.lock
+
+# Jest
+.jest
+coverage
+reports
+/cache
+test-report.xml
+
+# We're pushing the code to our own Bitbucket server which makes it safe for us to publish the keystore files
+# *.keystore
 
 # fastlane
 #
@@ -51,24 +69,43 @@ yarn-error.log
 **/fastlane/Preview.html
 **/fastlane/screenshots
 **/fastlane/test_output
+job.variables*
+!**/fastlane/**/build
+
+# Ignoring all "output-" files from output scripts
+/output-*
+# Sonar
+.scannerwork
 
 # Bundle artifact
 *.jsbundle
 
-# Ruby / CocoaPods
-**/Pods/
-/vendor/bundle/
+# DLP defined
+.vscode/*
+docs
+.expo/packager-info.json
+android/app/src/main/assets/index.android.bundle
+# AppConfig => Because build scripts copy it at each build
+android/app/src/main/assets/www/AppConfig
+# Airship properties => Because is generated and copied at each build
+android/app/src/main/assets/airshipconfig.properties
 
-# Temporary files created by Metro to check the health of the file watcher
-.metro-health-check*
+android/app/src/main/res/raw/*
+!android/app/src/main/res/raw/default_splashscreen.json
 
-# testing
-/coverage
-
-# Yarn
-.yarn/*
-!.yarn/patches
-!.yarn/plugins
-!.yarn/releases
-!.yarn/sdks
-!.yarn/versions
+android/.project
+android/.android
+android/app/.project
+*-journal
+*-shm
+__local__
+*.sourcemap.js
+metro.data.json
+.vscode
+android/app/gradlew.bat
+/security
+/tmp
+/vendor
+tsconfig.tsbuildinfo
+jest/datalayer/debug
+test.log.json

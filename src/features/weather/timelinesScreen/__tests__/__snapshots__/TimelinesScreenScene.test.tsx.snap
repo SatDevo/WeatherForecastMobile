@@ -1,0 +1,101 @@
+// Jest Snapshot v1, https://goo.gl/fbAQLP
+
+exports[`TimelinesScreenScene renders correctly 1`] = `
+<View
+  style={
+    {
+      "flex": 1,
+    }
+  }
+>
+  <View
+    style={
+      {
+        "flexDirection": "row",
+        "justifyContent": "flex-end",
+        "marginTop": 60,
+        "paddingBottom": 60,
+        "paddingHorizontal": 20,
+      }
+    }
+  >
+    <IconButton
+      onPress={[Function]}
+    >
+      <Search
+        height={24}
+        stroke="#FFFFFF"
+        width={24}
+      />
+    </IconButton>
+  </View>
+  <LocationDisplay
+    city="New York"
+    country="USA"
+  />
+  <TemperatureDisplay
+    condition="Sunny"
+    iconCondition="sun"
+    temperature="25°"
+  />
+  <View
+    style={
+      {
+        "flexDirection": "row",
+        "justifyContent": "space-around",
+        "marginTop": 40,
+        "paddingHorizontal": 20,
+      }
+    }
+  >
+    <WeatherMetric
+      icon={
+        <Wind
+          height={20}
+          stroke="#FFFFFF"
+          width={20}
+        />
+      }
+      value="10 km/h"
+    />
+    <WeatherMetric
+      icon={
+        <Droplet
+          height={20}
+          stroke="#FFFFFF"
+          width={20}
+        />
+      }
+      value="60%"
+    />
+    <WeatherMetric
+      icon={
+        <Sun
+          height={20}
+          stroke="#FFFFFF"
+          width={20}
+        />
+      }
+      value="06:00"
+    />
+  </View>
+  <DailyForecastList
+    forecasts={
+      [
+        {
+          "condition": "Sunny",
+          "temp": "26°",
+          "time": "12:00",
+          "windSpeed": "12 km/h",
+        },
+        {
+          "condition": "Partly Cloudy",
+          "temp": "28°",
+          "time": "15:00",
+          "windSpeed": "14 km/h",
+        },
+      ]
+    }
+  />
+</View>
+`;

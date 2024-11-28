@@ -1,0 +1,20 @@
+appId: com.weatherforecastmobile
+---
+# Verify weather metrics
+- assertVisible: "3.0 km/h"
+- assertVisible: "0.83%"
+- assertVisible: "14:47"
+
+# Test pull to refresh
+- swipe:
+    start: 50%, 30%
+    end: 50%, 70%
+    duration: 300
+
+# Test daily forecast horizontal scroll
+- scrollUntilVisible:
+    element:
+      id: "DailyForecastListTestID"
+    direction: "RIGHT"
+    timeout: 10000
+    speed: 100
